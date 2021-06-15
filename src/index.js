@@ -1,6 +1,11 @@
 import "./index.scss";
 import Music from "./sounds/spaceMusic.mp3";
 import Image from "./images/play-button.png";
+import Earthbasic from "./images/earthmap1k.jpg";
+import Venusbasic from "./images/venusmap.jpg";
+import Saturnbasic from "./images/saturnmap.jpg";
+import Sunbasic from "./images/sunmap.jpg";
+import Mercurybasic from "./images/mercurymap.jpg";
 
 document.getElementById("img").src = Image;
 var audio = new Audio(Music);
@@ -38,6 +43,68 @@ renderer.domElement.style.position = "absolute";
 renderer.domElement.style.backgroundColor = "black";
 renderer.domElement.style.overflow = "hidden";
 document.body.appendChild(renderer.domElement);
+
+const texture = new THREE.TextureLoader().load(Earthbasic);
+const material = new THREE.MeshBasicMaterial({
+    map: texture
+})
+const geometry = new THREE.SphereGeometry(50, 32, 16);
+const earthMesh = new THREE.Mesh(geometry, material);
+
+earthMesh.position.z = -500;
+earthMesh.position.x = 600;
+earthMesh.position.y = 400;
+scene.add(earthMesh)
+
+
+const venusTexture = new THREE.TextureLoader().load(Venusbasic);
+const venusMaterial = new THREE.MeshBasicMaterial({
+    map: venusTexture
+})
+const venusGeometry = new THREE.SphereGeometry(50, 32, 16);
+const venusMesh = new THREE.Mesh(venusGeometry, venusMaterial);
+
+venusMesh.position.z = 500;
+venusMesh.position.x = 400;
+venusMesh.position.y = 600;
+scene.add(venusMesh)
+
+
+const saturnTexture = new THREE.TextureLoader().load(Saturnbasic);
+const saturnMaterial = new THREE.MeshBasicMaterial({
+    map: saturnTexture
+})
+const saturnGeometry = new THREE.SphereGeometry(50, 32, 16);
+const saturnMesh = new THREE.Mesh(saturnGeometry, saturnMaterial);
+
+saturnMesh.position.z = 500;
+saturnMesh.position.x = 0;
+saturnMesh.position.y = 400;
+scene.add(saturnMesh)
+
+const sunTexture = new THREE.TextureLoader().load(Sunbasic);
+const sunMaterial = new THREE.MeshBasicMaterial({
+    map: sunTexture
+})
+const sunGeometry = new THREE.SphereGeometry(1000, 100, 100);
+const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
+
+sunMesh.position.z = 1000;
+sunMesh.position.x = 1500;
+sunMesh.position.y = 700;
+scene.add(sunMesh)
+
+const mercuryTexture = new THREE.TextureLoader().load(Mercurybasic);
+const mercuryMaterial = new THREE.MeshBasicMaterial({
+    map: mercuryTexture
+})
+const mercuryGeometry = new THREE.SphereGeometry(50, 25, 25);
+const mercuryMesh = new THREE.Mesh(mercuryGeometry, mercuryMaterial);
+
+mercuryMesh.position.z = -500;
+mercuryMesh.position.x = 1100;
+mercuryMesh.position.y = 500;
+scene.add(mercuryMesh)
 
 function randomX() {
     return Math.floor(Math.random() * 2000) + 1;
@@ -110,6 +177,7 @@ requestAnimationFrame(createStar);
 
 
 let loop = function () {
+    earthMesh.rotation.y += 0.01;
     camera.rotation.y += 0.001;
     renderer.render(scene, camera);
     window.requestAnimationFrame(loop);
