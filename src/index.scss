@@ -3,14 +3,20 @@ body {
     margin : 0px;
     box-sizing : border-box;
 }
+.scroll-bar {
+    overflow-y : scroll;
+    overflow-x : hidden;
+    width : 100vw;
+    height : 100vh;
+    position : absolute;
+    z-index : 1;
+}
 
 #heading {
     color : white;
     z-index : 1;
-    position : absolute;
+    position : relative;
     text-align : center;
     display : block;
     width : 100vw;
-    top : 50%;
-    transform:translateY(-50%)
 }
