@@ -13,10 +13,16 @@ body {
     z-index : 1;
 }
 
-#heading {
-    color : pink;
-    position : relative;
+#img {
+    width : 30px;
+    height : 30px;
     text-align : center;
     display : block;
-    width : 100vw;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 20px;
+}
+#img:hover {
+    cursor : pointer;
+    transform : scale(1.1);
 }

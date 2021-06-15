@@ -43,6 +43,10 @@ module.exports = {
                 test: /\.svg$/,
                 use: "svg-url-loader"
             },
+            {
+                test: /\.mp3$/,
+                use: 'file-loader'
+            }
         ]
     },
     plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],

@@ -1,4 +1,26 @@
 import "./index.scss";
+import Music from "./sounds/spaceMusic.mp3";
+import Image from "./images/play-button.png";
+
+document.getElementById("img").src = Image;
+var audio = new Audio(Music);
+
+document.getElementById("img").addEventListener("click", function () {
+    if (audio.paused) {
+        audio.play();
+    }
+    else {
+        console.log("ran");
+        audio.pause();
+    }
+}, false);
+
+
+
+
+
+
+
 
 let scene, camera, renderer;
 let shapes = [];
@@ -18,14 +40,14 @@ renderer.domElement.style.overflow = "hidden";
 document.body.appendChild(renderer.domElement);
 
 function randomX() {
-    return Math.floor(Math.random() * 1000) + 1;
+    return Math.floor(Math.random() * 2000) + 1;
 }
 function randomZ() {
     let number = Math.floor(Math.random() * 2) + 1;
     return number <= 1 ? Math.floor(Math.random() * 500) + 1 : Math.floor(Math.random() * -500) + 1;
 }
 function randomY() {
-    return Math.floor(Math.random() * 1000) + 1;
+    return Math.floor(Math.random() * 2000) + 1;
 }
 var creatingStars;
 function createStar() {
@@ -74,7 +96,7 @@ function createStar() {
     }
 
     creatingStars = window.requestAnimationFrame(createStar);
-    if (shapes.length > 500) {
+    if (shapes.length > 1000) {
         cancelAnimationFrame(creatingStars);
     }
 }
