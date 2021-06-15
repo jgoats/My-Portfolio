@@ -6,7 +6,11 @@ body {
 
 #heading {
     color : white;
-    background-color : black;
     z-index : 1;
     position : absolute;
+    text-align : center;
+    display : block;
+    width : 100vw;
+    top : 50%;
+    transform:translateY(-50%)
 }
