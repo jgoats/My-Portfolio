@@ -1,3 +1,5 @@
+import "./index.scss";
+
 let scene, camera, renderer;
 let shapes = [];
 
@@ -9,7 +11,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.domElement.style.width = "100vw";
 renderer.domElement.style.height = "100vh";
 renderer.domElement.style.backgroundColor = "black";
+renderer.domElement.style.position = "absolute";
+renderer.domElement.style.overflow = "hidden";
 document.body.appendChild(renderer.domElement);
+
 
 let geometry = new THREE.BoxGeometry(1, 1, 1);
 let material = new THREE.MeshBasicMaterial({ color: "red", wireframe: true });
