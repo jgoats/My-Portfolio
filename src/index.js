@@ -48,11 +48,11 @@ const texture = new THREE.TextureLoader().load(Earthbasic);
 const material = new THREE.MeshBasicMaterial({
     map: texture
 })
-const geometry = new THREE.SphereGeometry(50, 32, 16);
+const geometry = new THREE.SphereGeometry(50, 32, 32);
 const earthMesh = new THREE.Mesh(geometry, material);
 
-earthMesh.position.z = -500;
-earthMesh.position.x = 600;
+earthMesh.position.z = -100;
+earthMesh.position.x = 200;
 earthMesh.position.y = 400;
 scene.add(earthMesh)
 
@@ -64,7 +64,7 @@ const venusMaterial = new THREE.MeshBasicMaterial({
 const venusGeometry = new THREE.SphereGeometry(50, 32, 16);
 const venusMesh = new THREE.Mesh(venusGeometry, venusMaterial);
 
-venusMesh.position.z = 500;
+venusMesh.position.z = 100;
 venusMesh.position.x = 400;
 venusMesh.position.y = 600;
 scene.add(venusMesh)
@@ -74,22 +74,22 @@ const saturnTexture = new THREE.TextureLoader().load(Saturnbasic);
 const saturnMaterial = new THREE.MeshBasicMaterial({
     map: saturnTexture
 })
-const saturnGeometry = new THREE.SphereGeometry(50, 32, 16);
+const saturnGeometry = new THREE.SphereGeometry(25, 100, 100);
 const saturnMesh = new THREE.Mesh(saturnGeometry, saturnMaterial);
 
-saturnMesh.position.z = 500;
+saturnMesh.position.z = 0;
 saturnMesh.position.x = 0;
-saturnMesh.position.y = 400;
+saturnMesh.position.y = 500;
 scene.add(saturnMesh)
 
 const sunTexture = new THREE.TextureLoader().load(Sunbasic);
 const sunMaterial = new THREE.MeshBasicMaterial({
     map: sunTexture
 })
-const sunGeometry = new THREE.SphereGeometry(1000, 100, 100);
+const sunGeometry = new THREE.SphereGeometry(400, 100, 100);
 const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
 
-sunMesh.position.z = 1000;
+sunMesh.position.z = 200;
 sunMesh.position.x = 1500;
 sunMesh.position.y = 700;
 scene.add(sunMesh)
@@ -98,10 +98,10 @@ const mercuryTexture = new THREE.TextureLoader().load(Mercurybasic);
 const mercuryMaterial = new THREE.MeshBasicMaterial({
     map: mercuryTexture
 })
-const mercuryGeometry = new THREE.SphereGeometry(50, 25, 25);
+const mercuryGeometry = new THREE.SphereGeometry(50, 100, 100);
 const mercuryMesh = new THREE.Mesh(mercuryGeometry, mercuryMaterial);
 
-mercuryMesh.position.z = -500;
+mercuryMesh.position.z = -200;
 mercuryMesh.position.x = 1100;
 mercuryMesh.position.y = 500;
 scene.add(mercuryMesh)
@@ -111,7 +111,7 @@ function randomX() {
 }
 function randomZ() {
     let number = Math.floor(Math.random() * 2) + 1;
-    return number <= 1 ? Math.floor(Math.random() * 500) + 1 : Math.floor(Math.random() * -500) + 1;
+    return number <= 1 ? Math.floor(Math.random() * 500) + 500 : Math.floor(Math.random() * -500) + 1;
 }
 function randomY() {
     return Math.floor(Math.random() * 2000) + 1;
