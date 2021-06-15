@@ -91,7 +91,7 @@ const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
 
 sunMesh.position.z = 200;
 sunMesh.position.x = 1500;
-sunMesh.position.y = 700;
+sunMesh.position.y = 1350;
 scene.add(sunMesh)
 
 const mercuryTexture = new THREE.TextureLoader().load(Mercurybasic);
