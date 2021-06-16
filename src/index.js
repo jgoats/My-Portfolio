@@ -182,4 +182,33 @@ let loop = function () {
     renderer.render(scene, camera);
     window.requestAnimationFrame(loop);
 }
-loop();
+window.requestAnimationFrame(loop);
+let options = {
+    root: null,
+    threshold: 0.50
+};
+let element = document.getElementsByClassName("softprogress")[0];
+let observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) animate.call(window);
+    })
+}, options);
+observer.observe(element);
+
+function animate() {
+    if (
+        document.querySelectorAll(".softprogress").length > 0 &&
+        document.querySelectorAll(".softprogress [code-softprogress]").length > 0
+    ) {
+        document
+            .querySelectorAll(".softprogress [code-softprogress]")
+            .forEach((x) => runsoftprogress(x));
+    }
+};
+function runsoftprogress(el) {
+    el.className = "run-softprogress";
+    el.setAttribute(
+        "style",
+        `--run-softprogress:${el.getAttribute("code-softprogress")}%;`
+    );
+}

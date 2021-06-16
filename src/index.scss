@@ -3,6 +3,9 @@ body {
     margin : 0px;
     box-sizing : border-box;
     font-family: 'Oxygen', sans-serif;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 .nav-container {
     display : flex;
@@ -17,11 +20,13 @@ body {
     justify-content: space-around;
     padding : 0px;
     a {   
-        color: white;   
+        color: white; 
+        text-decoration : none;  
     }
     
     a:active {
         color: white;
+        text-decoration : none;
     }
     
     a[tabindex]:focus {
@@ -41,6 +46,7 @@ body {
 }
 
 .scroll-bar {
+    scroll-behavior: smooth;
     padding : 10px 10px;
     overflow-y : scroll;
     overflow-x : hidden;
@@ -110,6 +116,55 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(175, 235, 235);
 }
+
+/* softprogress bar CSS */
+.softprogress *:not([code-softprogress]) {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  .softprogress {
+    width: 80%;
+    max-width: 500px;
+    padding: 15px;
+    box-sizing: border-box;
+    display : block;
+    margin-right : auto;
+    margin-left : auto;
+    p {
+        color : white;
+    }
+  }
+  .softprogress [code-softprogress] {
+    height: 25px;
+    box-shadow: 0 0 1px 1px rgba(0, 20, 0, 0.35) inset;
+    border-radius: 15px;
+    margin: 5px 0 10px 0;
+    overflow: hidden;
+    background-color: #ddd;
+  }
+  [code-softprogress]::after {
+    content: "";
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: linear-gradient(to bottom right, rgb(40, 155, 204), rgb(144, 240, 135));
+    width: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 15px;
+    padding: 0 3px;
+    transition: 3s;
+  }
+  [code-softprogress].run-softprogress::after {
+    content: attr(code-softprogress) "% ";
+    width: var(--run-softprogress);
+    color : black;
+    font-weight : bold;
+    font-size : 20px;
+  }
+  /* End softprogress bar CSS */
 
 
 
