@@ -2,9 +2,46 @@ body {
     padding : 0px;
     margin : 0px;
     box-sizing : border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+.nav-container {
+    display : flex;
+    width : 60vw;
+    position : absolute;
+    z-index : 2;
+    left : 50%;
+    transform : translateX(-50%);
+    top : 11%;
+    height : 30px;
+    align-items : center;
+    justify-content: space-around;
+    padding : 0px;
+    a {   
+        color: white;   
+    }
+    
+    a:active {
+        color: white;
+    }
+    
+    a[tabindex]:focus {
+        color: white;
+        outline: none;
+    }
+    .nav-item {
+        display : flex;
+        color : white;
+        font-family: 'Space Mono', monospace;
+        font-style : none;
+    }
+    .nav-item:hover {
+        cursor: pointer;
+        text-decoration : underline;
+    }
 }
 
 .scroll-bar {
+    padding : 10px 10px;
     overflow-y : scroll;
     overflow-x : hidden;
     opacity : 0.9;
@@ -18,7 +55,22 @@ body {
     transform : translateY(-50%);
     z-index : 1;
     box-shadow : 80px 40px 100px, 0 0 2px, 0 0 20em #94f182, 0 0 0.5em #29d4e0, 0 0 0.1em #94f182, 80px 40px 100px #29d4e0;
-    /* Designing for scroll-bar */
+    .about-me-heading {
+        color : white;
+        text-align : center;
+    }
+    .about-me-container {
+        text-align : center;
+        color : white;
+        line-height : 2rem;
+    }
+    .skills-heading {
+        color : white;
+        text-align : center;
+    }
+    .skills-container {
+        text-align : left;
+    }
 }
 #img {
     position : absolute;
