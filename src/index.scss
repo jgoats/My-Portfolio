@@ -17,7 +17,7 @@ body {
     top : 50%;
     transform : translateY(-50%);
     z-index : 1;
-    box-shadow : 80px -40px 100px, 0 0 2px, 0 0 1em #29d4e0, 0 0 0.5em #29d4e0, 0 0 0.1em #29d4e0, 0 10px 3px #000;
+    box-shadow : 80px 40px 100px, 0 0 2px, 0 0 20em #94f182, 0 0 0.5em #29d4e0, 0 0 0.1em #94f182, 80px 40px 100px #29d4e0;
     /* Designing for scroll-bar */
 }
 #img {
@@ -37,13 +37,7 @@ body {
         transition : 0.5s;
         border-radius : 50%;
         }
-.heading {
-    text-align : center;
-    margin-top : 50px;
-    color: #fee;/* Designing for scroll-bar */
-}
-
-
+        
 ::-webkit-scrollbar {
     width: 10px;
 }
