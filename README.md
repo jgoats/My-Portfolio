@@ -1,5 +1,5 @@
 # My-Portfolio
-link to site can be found here: https://justinssoftware.com/Portfolio/dist/
+link to my portfolio can be found here: https://justinssoftware.com/Portfolio/dist/
 This is my Portfolio website. I chose webpack as my bundler of choice due to webpack's excellent configuration options.
 Three.js is used to create the 3d environment that serves as the background for my app. I chose to create a space theme for my portfolio due to my love of space and sci-fi.
 1000 stars are generated and added to the scene with random x,y,z coordinates and the camera for the scene is positioned in the middle of everything to create the environment.
