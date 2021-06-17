@@ -46,9 +46,6 @@ module.exports = {
             {
                 test: /\.mp3|mp4$/,
                 use: 'file-loader',
-                options: {
-                    name: "[name].[hash].[ext]"
-                }
             }
         ]
     },
