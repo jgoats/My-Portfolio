@@ -77,6 +77,39 @@ body {
     .skills-container {
         text-align : left;
     }
+    .project-heading {
+        color : white;
+        text-align : center;
+    }
+    .project-container {
+    display : flex;
+    flex-direction : row;
+    flex-wrap : wrap;
+    justify-content : center;
+    }
+    .project-card {
+        box-shadow: 0px 0px 5px 2px rgb(255, 153, 0);
+        height : 252px;
+        a {
+            text-decoration : none;
+        }
+        .video {
+            width : 200px;
+            height : 200px;
+            object-fit : fill;
+            padding : 0px;
+            margin : 0px;
+        }
+    }
+    .card-name {
+        text-decoration : none;
+        color : white;
+        text-align : center;
+    }
+    .card-image {
+        width : 250px;
+        height : 200px;
+    }
 }
 #img {
     position : absolute;
@@ -90,10 +123,6 @@ body {
     }
     #img:hover {
         cursor : pointer;
-        background-color : white;
-        padding : 2px;
-        transition : 0.5s;
-        border-radius : 50%;
         }
         
 ::-webkit-scrollbar {

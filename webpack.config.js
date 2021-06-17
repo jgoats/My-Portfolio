@@ -44,8 +44,11 @@ module.exports = {
                 use: "svg-url-loader"
             },
             {
-                test: /\.mp3$/,
-                use: 'file-loader'
+                test: /\.mp3|mp4$/,
+                use: 'file-loader',
+                options: {
+                    name: "[name].[hash].[ext]"
+                }
             }
         ]
     },
