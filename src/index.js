@@ -8,10 +8,11 @@ import Sunbasic from "./images/sunmap.jpg";
 import Mercurybasic from "./images/mercurymap.jpg";
 import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
 
+
 document.getElementById("img").src = Image;
 var audio = new Audio(Music);
 
-document.getElementById("src").src = AsteroidKillerMP4;
+document.getElementById("asteroidkiller").src = AsteroidKillerMP4;
 
 document.getElementById("img").addEventListener("click", function () {
     if (audio.paused) {
