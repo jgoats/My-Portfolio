@@ -1,6 +1,7 @@
 import "./index.scss";
 import Music from "./sounds/spaceMusic.mp3";
 import Image from "./images/play-button.png";
+import Image2 from "./images/play-button.svg";
 import Earthbasic from "./images/earthmap1k.jpg";
 import Venusbasic from "./images/venusmap.jpg";
 import Saturnbasic from "./images/saturnmap.jpg";
@@ -8,17 +9,18 @@ import Sunbasic from "./images/sunmap.jpg";
 import Mercurybasic from "./images/mercurymap.jpg";
 import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
 
-document.getElementById("img").src = Image;
-var audio = new Audio(Music);
 
+var audio = new Audio(Music);
+document.getElementById("img").src = Image;
 document.getElementById("asteroidkiller").src = AsteroidKillerMP4;
 
 document.getElementById("img").addEventListener("click", function () {
     if (audio.paused) {
+        document.getElementById("img").src = Image2;
         audio.play();
     }
     else {
-        console.log("ran");
+        document.getElementById("img").src = Image;
         audio.pause();
     }
 }, false);
@@ -182,7 +184,7 @@ let loop = function () {
 window.requestAnimationFrame(loop);
 let options = {
     root: null,
-    threshold: 0.50
+    threshold: 0.30
 };
 let element = document.getElementsByClassName("softprogress")[0];
 let observer = new IntersectionObserver(function (entries) {
