@@ -25,6 +25,38 @@ document.getElementById("img").addEventListener("click", function () {
     }
 }, false);
 
+let hamburger = document.getElementsByClassName("hamburger-content")[0];
+let hamburgerContainer = document.getElementsByClassName("nav-icon")[0];
+let ele = document.getElementsByClassName("nav-ele");
+let navState = 0;
+hamburgerContainer.addEventListener("click", function () {
+    if (navState == 0) {
+        ele[0].style.transform = "translateY(6px) rotate(135deg)";
+        ele[1].style.transform = "scale(0)";
+        ele[2].style.transform = "translateY(-6px) rotate(-135deg)";
+        for (let i = 0; i < ele.length; i++) {
+            ele[i].style.transition = "0.2s";
+            ele[i].style.backgroundColor = "pink";
+        }
+        hamburger.style.display = "block";
+        hamburger.style.top = "110px";
+
+        navState++;
+    }
+    else {
+        console.log(navState);
+        for (let i = 0; i < ele.length; i++) {
+            ele[i].style.transform = "none";
+            ele[i].style.backgroundColor = "white";
+        }
+        hamburger.style.display = "none";
+        navState--;
+    }
+}, false);
+
+let burgerItem = document.getElementsByClassName("burger-item");
+
+
 
 let scene, camera, renderer;
 let shapes = [];
@@ -184,7 +216,7 @@ let loop = function () {
 window.requestAnimationFrame(loop);
 let options = {
     root: null,
-    threshold: 0.30
+    threshold: 0.35
 };
 let element = document.getElementsByClassName("softprogress")[0];
 let observer = new IntersectionObserver(function (entries) {
