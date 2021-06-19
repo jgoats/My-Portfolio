@@ -23,7 +23,7 @@ body {
     z-index : 2;
     left : 50%;
     transform : translateX(-50%);
-    top : 11%;
+    top : 8%;
     height : 30px;
     align-items : center;
     justify-content: space-around;
@@ -55,7 +55,6 @@ body {
 }
 
 .scroll-bar {
-    scroll-behavior: smooth;
     padding : 10px 10px;
     overflow-y : scroll;
     overflow-x : hidden;
@@ -78,6 +77,7 @@ body {
         text-align : center;
         color : white;
         line-height : 2rem;
+        margin-top : 60px;
     }
     .skills-heading {
         color : white;
@@ -85,12 +85,14 @@ body {
     }
     .skills-container {
         text-align : left;
+        margin-top : 60px;
     }
     .project-heading {
         color : white;
         text-align : center;
     }
     .project-container {
+    margin : 60px 60px;
     display : flex;
     flex-direction : row;
     flex-wrap : wrap;
@@ -203,19 +205,19 @@ body {
     font-size : 20px;
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     .nav-container {
         display : none;
     }
     .hamburger-content {
+        margin : 0px;
         display : none;
         position : absolute;
         width : 60vw;
         left : 50%;
-        top : -8%;
         transform : translateX(-50%);
         z-index : 2;
-        height : 150px;
+        height : 25vh;
         justify-content : center;
         align-items : center;
         background-color : black;
@@ -245,11 +247,11 @@ body {
     margin : 0px;
     display : block;
     width : 20px;
-    position : fixed;
+    position : absolute;
     z-index : 2;
-    left : 82%;
-    transform : translateX(-50%);
-    top : 14%;
+    left : 80%;
+    top : 25%;
+    transform : translateY(-300%);
     padding : 0px;
     .nav-ele {
         height : 2px;

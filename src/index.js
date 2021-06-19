@@ -8,6 +8,56 @@ import Saturnbasic from "./images/saturnmap.jpg";
 import Sunbasic from "./images/sunmap.jpg";
 import Mercurybasic from "./images/mercurymap.jpg";
 import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
+if (!CSS.supports("scroll-behavior", "smooth")) {
+    function SmoothVerticalScrolling(e, time) {
+        let eTop = e.getBoundingClientRect().top;
+        let top = window.innerHeight * .20;
+        let distance = eTop - top;
+        let counter = 0;
+        if (Math.sign(distance) == 1) {
+            let interval = setInterval(function () {
+                console.log("positive");
+                document.getElementsByClassName("scroll-bar")[0].scrollBy(0, 7);
+                if (counter >= distance) {
+                    window.clearInterval(interval);
+                }
+                else {
+                    counter += 7;
+                }
+
+            }, 1);
+        }
+        if (Math.sign(distance) == -1) {
+            let interval = setInterval(function () {
+                console.log("negative");
+                document.getElementsByClassName("scroll-bar")[0].scrollBy(0, -7);
+                if (counter <= distance) {
+                    window.clearInterval(interval);
+                }
+                else {
+                    counter += -7;
+                }
+
+            }, 1);
+        }
+
+    }
+
+    let burgerItem = document.getElementsByClassName("burger-item");
+    for (let i = 0; i < burgerItem.length; i++) {
+        burgerItem[i].addEventListener("click", (e) => {
+            let string = e.target.id;
+            let id = string.slice(1);
+            console.log(id);
+            let element = document.getElementById(`${id}`);
+            console.log(element);
+            SmoothVerticalScrolling(element, 275);
+        }, false);
+    }
+}
+else {
+    document.getElementsByClassName("scroll-bar")[0].style.scrollBehavior = "smooth";
+}
 
 
 var audio = new Audio(Music);
@@ -39,7 +89,7 @@ hamburgerContainer.addEventListener("click", function () {
             ele[i].style.backgroundColor = "pink";
         }
         hamburger.style.display = "block";
-        hamburger.style.top = "110px";
+        hamburger.style.top = "calc(20vh - 1%)";
 
         navState++;
     }
@@ -54,7 +104,6 @@ hamburgerContainer.addEventListener("click", function () {
     }
 }, false);
 
-let burgerItem = document.getElementsByClassName("burger-item");
 
 
 

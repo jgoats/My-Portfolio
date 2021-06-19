@@ -20,20 +20,28 @@
         <div class="nav-ele"></div>
     </div>
     <ul class="nav-container">
-        <li class="nav-item"><a href="#about-me">About Me</a></li>
-        <li class="nav-item"><a href="#skills">Skills</a></li>
-        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#about-me-main">About Me</a></li>
+        <li class="nav-item"><a href="#skills-main">Skills</a></li>
+        <li class="nav-item"><a href="#projects-main">Projects</a></li>
         <li class="nav-item"><a>Contact</a></li>
     </ul>
     <div class="hamburger-content">
-        <li class="burger-item"><a class="link" href="#about-me">About Me</a></li>
-        <li class="burger-item"><a class="link" href="#skills">Skills</a></li>
-        <li class="burger-item"><a class="link" href="#projects">Projects</a></li>
-        <li class="burger-item"><a class="link">Contact</a></li>
+        <li class="burger-item">
+            <a class="link" id="#about-me" href="#about-me">About Me</a>
+        </li>
+        <li class="burger-item">
+            <a class="link" id="#skills" href="#skills">Skills</a>
+        </li>
+        <li class="burger-item">
+            <a class="link" id="#projects" href="#projects">Projects</a>
+        </li>
+        <li class="burger-item">
+            <a class="link">Contact</a>
+        </li>
     </div>
     <div class="scroll-bar">
-        <span style="display : hidden;margin : 0px;" id="about-me"></span>
-        <h3 class="about-me-heading">About Me</h3>
+        <span id="about-me-main" style="display : hidden;margin : 10px;"></span>
+        <h3 id="about-me" class="about-me-heading">About Me</h3>
         <div class="about-me-container">
             I started my web development journey two years ago while watching a video on HTML and CSS out of curiosity.
             Over time I grew my skills through intrigue and alot of hard work.
@@ -41,8 +49,8 @@
             As someone that always enjoyed building as a kid and teenager, coding continues to satisfy this
             craving for me.
         </div>
-        <span style="display : hidden;margin : 0px;" id="skills"></span>
-        <h3 class="skills-heading">Skills</h3>
+        <span id="skills-main" style="display : hidden;margin : 10px;"></span>
+        <h3 id="skills" class="skills-heading">Skills</h3>
         <div class="skills-container">
             <div class="softprogress">
                 <p>HTML</p>
@@ -61,8 +69,8 @@
                 <div code-softprogress="60"></div>
             </div>
         </div>
-        <span style="display : hidden;margin : 0px;" id="projects"></span>
-        <h3 class="project-heading">Projects</h3>
+        <span id="projects-main" style="display : hidden;margin : 10px;"></span>
+        <h3 id="projects" class="project-heading">Projects</h3>
         <div class="project-container">
             <div class="project-card">
                 <a target="_blank" href="https://justinssoftware.com/AsteroidKiller/asteroidKiller.html">
