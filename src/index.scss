@@ -7,7 +7,7 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-.nav-icon {
+.hamburger-container {
     display : none;
 }
 .hamburger-content {
@@ -243,7 +243,7 @@ body {
         
     }
    
-    .nav-icon {
+    .hamburger-container {
     margin : 0px;
     display : block;
     width : 20px;
@@ -259,7 +259,7 @@ body {
         margin : 4px 0px;
     }
 }
-.nav-icon:hover {
+.hamburger-container:hover {
     cursor : pointer;
 }
   }

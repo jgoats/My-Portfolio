@@ -11,47 +11,46 @@ import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
 
 
 let hamburger = document.getElementsByClassName("hamburger-content")[0];
-let hamburgerContainer = document.getElementsByClassName("nav-icon")[0];
+let hamburgerContainer = document.getElementsByClassName("hamburger-container")[0];
 let ele = document.getElementsByClassName("nav-ele");
 let navState = 0;
 
-function translateHamburger () {
-     ele[0].style.transform = "translateY(6px) rotate(135deg)";
-        ele[1].style.transform = "scale(0)";
-        ele[2].style.transform = "translateY(-6px) rotate(-135deg)";
-        for (let i = 0; i < ele.length; i++) {
-            ele[i].style.transition = "0.2s";
-            ele[i].style.backgroundColor = "pink";
-        }
-        hamburger.style.display = "block";
-        hamburger.style.top = "calc(20vh - 1%)";
-        navState++;
+function translateHamburger() {
+    ele[0].style.transform = "translateY(6px) rotate(135deg)";
+    ele[1].style.transform = "scale(0)";
+    ele[2].style.transform = "translateY(-6px) rotate(-135deg)";
+    for (let i = 0; i < ele.length; i++) {
+        ele[i].style.transition = "0.2s";
+        ele[i].style.backgroundColor = "pink";
+    }
+    hamburger.style.display = "block";
+    hamburger.style.top = "calc(20vh - 1%)";
+    navState = 1;
 }
-function undoTranslate () {
-     for (let i = 0; i < ele.length; i++) {
-            ele[i].style.transform = "none";
-            ele[i].style.backgroundColor = "white";
-        }
-        hamburger.style.display = "none";
-        navState--;
+function undoTranslate() {
+    for (let i = 0; i < ele.length; i++) {
+        ele[i].style.transform = "none";
+        ele[i].style.backgroundColor = "white";
+    }
+    hamburger.style.display = "none";
+    navState = 0;
 }
 
 hamburgerContainer.addEventListener("click", function () {
     if (navState == 0) {
-       translateHamburger.call(window);
+        translateHamburger.call(window);
     }
     else {
-       undoTranslate.call(window);
+        undoTranslate.call(window);
     }
 }, false);
 
 
 
-function handleScroll(e, time) {
+function handleScroll(e) {
     let eTop = e.getBoundingClientRect().top;
     let top = window.innerHeight * .20;
     let distance = eTop - top;
-    console.log(distance % 10);
     let counter = 0;
     if (Math.sign(distance) == 1) {
         let interval = setInterval(function () {
@@ -77,7 +76,7 @@ function handleScroll(e, time) {
         }, 16);
     }
 }
-    (function () {
+(function () {
     let burgerItem = document.getElementsByClassName("burger-item");
     for (let i = 0; i < burgerItem.length; i++) {
         burgerItem[i].addEventListener("click", (e) => {
