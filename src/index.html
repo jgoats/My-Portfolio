@@ -23,7 +23,7 @@
         <li class="nav-item"><a id="#about-me-main">About Me</a></li>
         <li class="nav-item"><a id="#skills-main">Skills</a></li>
         <li class="nav-item"><a id="#projects-main">Projects</a></li>
-        <li class="nav-item"><a>Contact</a></li>
+        <li class="nav-item"><a id="#contact-main">Contact</a></li>
     </ul>
     <div class="hamburger-content">
         <li class="burger-item">
@@ -36,7 +36,7 @@
             <a class="link" id="#projects">Projects</a>
         </li>
         <li class="burger-item">
-            <a class="link">Contact</a>
+            <a class="link" id="#contact">Contact</a>
         </li>
     </div>
     <div class="scroll-bar">
@@ -80,7 +80,39 @@
                 </a>
             </div>
         </div>
+        <span id="contact-main" style="display : hidden;margin : 10px;"></span>
+        <h3 style="margin-top : 30px;" id="contact" class="contact-heading">Contact Me</h3>
+        <div class="contact-container">
 
+            <form method="post" action="https://contact-form-backend-234.herokuapp.com/send" id="contact-form">
+                <div class="form-element">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+                <div class="form-element">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" required>
+                </div>
+                <div class="form-element">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" cols="20" rows="10"></textarea>
+                </div>
+                <div class="form-element">
+                    <button type="submit">Submit</button>
+                </div>
+                <div class="success" id="status">Success</div>
+            </form>
+        </div>
+        <footer>
+            <p>Find me on</p>
+            <img src="img/github.svg" alt="Github">
+            <img src="img/twitter.svg" alt="Twitter">
+            <img src="img/linkedin.svg" alt="LinkedIn">
+        </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
 </body>
