@@ -51,11 +51,14 @@ function handleScroll(e) {
     let eTop = e.getBoundingClientRect().top;
     let top = window.innerHeight * .20;
     let distance = eTop - top;
+    let difference = distance % 30;
+    let total = distance - difference;
+    console.log(difference);
     let counter = 0;
     if (Math.sign(distance) == 1) {
         let interval = setInterval(function () {
             document.getElementsByClassName("scroll-bar")[0].scrollBy(0, 30);
-            if (counter >= distance) {
+            if (counter >= total) {
                 window.clearInterval(interval);
             }
             else {
@@ -66,7 +69,7 @@ function handleScroll(e) {
     if (Math.sign(distance) == -1) {
         let interval = setInterval(function () {
             document.getElementsByClassName("scroll-bar")[0].scrollBy(0, -30);
-            if (counter <= distance) {
+            if (counter <= total) {
                 window.clearInterval(interval);
             }
             else {
@@ -76,28 +79,27 @@ function handleScroll(e) {
         }, 16);
     }
 }
-(function () {
-    let burgerItem = document.getElementsByClassName("burger-item");
-    for (let i = 0; i < burgerItem.length; i++) {
-        burgerItem[i].addEventListener("click", (e) => {
-            let string = e.target.id;
-            let id = string.slice(1);
-            let element = document.getElementById(`${id}`);
-            undoTranslate.call(window);
-            handleScroll(element);
-        }, false);
-    }
-    let navItem = document.getElementsByClassName("nav-item");
-    for (let i = 0; i < navItem.length; i++) {
-        navItem[i].addEventListener("click", (e) => {
-            let string = e.target.id;
-            let id = string.slice(1);
-            let element = document.getElementById(`${id}`);
-            undoTranslate.call(window);
-            handleScroll(element);
-        }, false);
-    }
-})();
+
+let burgerItem = document.getElementsByClassName("burger-item");
+for (let i = 0; i < burgerItem.length; i++) {
+    burgerItem[i].addEventListener("click", (e) => {
+        let string = e.target.id;
+        let id = string.slice(1);
+        let element = document.getElementById(`${id}`);
+        undoTranslate.call(window);
+        handleScroll(element);
+    }, false);
+}
+let navItem = document.getElementsByClassName("nav-item");
+for (let i = 0; i < navItem.length; i++) {
+    navItem[i].addEventListener("click", (e) => {
+        let string = e.target.id;
+        let id = string.slice(1);
+        let element = document.getElementById(`${id}`);
+        undoTranslate.call(window);
+        handleScroll(element);
+    }, false);
+}
 
 
 
@@ -116,6 +118,13 @@ document.getElementById("img").addEventListener("click", function () {
     }
 }, false);
 
+let submit = document.getElementById("contact-button");
+submit.addEventListener("click", () => {
+    document.getElementById("firstname").innerHTML = "";
+    document.getElementById("lastname").innerHTML = "";
+    document.getElementById("email").innerHTML = "";
+    document.getElementById("message").innerHTML = "";
+}, false);
 
 let scene, camera, renderer;
 let shapes = [];
