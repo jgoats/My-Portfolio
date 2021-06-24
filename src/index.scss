@@ -151,28 +151,24 @@ body {
         text-align : center;
         font-size : 24px;
     }
-    #status.success {
+    .success {
         color : green;
-        animation : status 4s ease forwards;
+        animation : status 4s ease-in;
     }
-    #status.error {
+    .error {
         color : red;
-        animation : status 4s ease forwards;
+        opacity : 1;
+        animation : status 4s ease-out;
     }
     @keyframes status {
         0% {
             opacity : 1;
-            pointer-events: all;
-        }
-        90% {
-            opacity : 1;
-            pointer-events : all;
         }
         100% {
             opacity : 0;
-            pointer-events : none;
         }
     }
+   
     }
 
 }

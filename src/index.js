@@ -1,3 +1,4 @@
+import axios from "axios";
 import "./index.scss";
 import Music from "./sounds/spaceMusic.mp3";
 import Image from "./images/play-button.png";
@@ -120,11 +121,97 @@ document.getElementById("img").addEventListener("click", function () {
 
 let submit = document.getElementById("contact-button");
 submit.addEventListener("click", () => {
-    document.getElementById("firstname").innerHTML = "";
-    document.getElementById("lastname").innerHTML = "";
-    document.getElementById("email").innerHTML = "";
-    document.getElementById("message").innerHTML = "";
+
 }, false);
+
+document.getElementById("contact-button").addEventListener("click", function (e) {
+    e.preventDefault();
+    let firstName = document.getElementById("firstname").value;
+    let lastName = document.getElementById("lastname").value;
+    let Email = document.getElementById("email").value;
+    let Message = document.getElementById("message").value;
+    let status = document.getElementById("status");
+
+    let userData = {
+        firstname: firstName,
+        lastname: lastName,
+        email: Email,
+        message: Message
+    }
+    if (userData.firstname == "") {
+        status.classList.add("error");
+        status.innerHTML = "please fill out firstname"
+        setTimeout(() => {
+            status.classList.remove("error");
+            status.innerHTML = "";
+        }, 4000);
+    }
+    else if (userData.lastname == "") {
+        status.classList.add("error");
+        status.innerHTML = "please fill out lastname"
+        setTimeout(() => {
+            status.classList.remove("error");
+            status.innerHTML = "";
+        }, 4000);
+    }
+    else if (userData.email == "" || userData.email.indexOf("@") == -1) {
+        if (userData.email == "") {
+            status.classList.add("error")
+            status.innerHTML = "please fill out email"
+            setTimeout(() => {
+                status.classList.remove("error");
+                status.innerHTML = "";
+            }, 4000)
+        }
+        else if (userData.email.indexOf("@") == -1) {
+            status.classList.add("error")
+            status.innerHTML = "please fill out valid email"
+            setTimeout(() => {
+                status.classList.remove("error");
+                status.innerHTML = "";
+            }, 4000)
+        }
+    }
+    else if (userData.message == "") {
+        status.classList.add("error");
+        status.innerHTML = "please fill out message"
+        setTimeout(() => {
+            status.classList.remove("error");
+            status.innerHTML = "";
+        }, 4000);
+    }
+    else {
+        axios({
+            method: "post",
+            url: 'https://contact-form-backend-234.herokuapp.com/send',
+            data: userData,
+            headers: {
+                "content-type": "application/json"
+            }
+        }).then((response) => {
+            if (response.data.emailSent) {
+                status.classList.add("success");
+                status.innerHTML = "email was successfully sent"
+                setTimeout(() => {
+                    status.classList.remove("success");
+                    status.innerHTML = "";
+                }, 4000);
+                document.getElementById("contact-form").reset();
+            }
+        }).catch((err) => {
+            if (err) {
+                status.classList.add("error");
+                status.innerHTML = "email wasn't sent, please try again"
+                setTimeout(() => {
+                    status.classList.remove("error");
+                    status.innerHTML = "";
+                }, 4000);
+            }
+        });
+    }
+
+}, false)
+
 
 let scene, camera, renderer;
 let shapes = [];

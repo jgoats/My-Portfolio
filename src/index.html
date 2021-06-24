@@ -84,7 +84,7 @@
         <h3 style="margin-top : 30px;" id="contact" class="contact-heading">Contact Me</h3>
         <div class="contact-container">
 
-            <form method="post" action="https://contact-form-backend-234.herokuapp.com/send" id="contact-form">
+            <form id="contact-form">
                 <div class="form-element">
                     <label for="first-name">First Name</label>
                     <input type="text" id="firstname" name="firstname" required>
@@ -95,23 +95,23 @@
                 </div>
                 <div class="form-element">
                     <label for="email">Email</label>
-                    <input id="email" type="email" name="email" required>
+                    <input id="email" type="email" name="email">
                 </div>
                 <div class="form-element">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" cols="20" rows="10"></textarea>
                 </div>
                 <div class="form-element">
-                    <button id="contact-button" type="submit">Submit</button>
+                    <button id="contact-button">Submit</button>
                 </div>
-                <div id="status">Success</div>
+                <div id="status"></div>
             </form>
         </div>
         <footer>
             <p>Find me on</p>
-            <img src="img/github.svg" alt="Github">
+            <!-- <img src="img/github.svg" alt="Github">
             <img src="img/twitter.svg" alt="Twitter">
-            <img src="img/linkedin.svg" alt="LinkedIn">
+            <img src="img/linkedin.svg" alt="LinkedIn">-->
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
