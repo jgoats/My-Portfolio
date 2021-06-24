@@ -113,8 +113,9 @@ body {
         align-items : center;
         justify-content : center;
         flex-direction: column;
-        background-color : white;
+        background-color : black;
      form {
+         color : white;
            width : 100%;
            padding : 20px;
            .form-element {
@@ -127,8 +128,12 @@ body {
             margin-right : auto;
             margin-top : 10px;
             padding : 10px;
+            font-size : 20px;
             border-radius : 2px;
             border : 1px solid rgb(144, 240, 135);
+       }
+       .form-element label {
+        font-size : 20px;
        }
        textarea {
            resize : vertical;
@@ -151,16 +156,19 @@ body {
         font-size : 24px;
     }
     .success {
-        color : green;
+        color : rgb(144, 240, 135);
         animation : status 4s ease-in;
     }
     .error {
-        color : red;
+        color : pink;
         opacity : 1;
         animation : status 4s ease-out;
     }
     @keyframes status {
         0% {
+            opacity : 1;
+        }
+        90% {
             opacity : 1;
         }
         100% {
