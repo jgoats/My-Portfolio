@@ -17,14 +17,14 @@ let ele = document.getElementsByClassName("nav-ele");
 let navState = 0;
 
 function translateHamburger() {
-    ele[0].style.transform = "translateY(6px) rotate(135deg)";
+    ele[0].style.transform = "translateY(9px) rotate(135deg)";
     ele[1].style.transform = "scale(0)";
-    ele[2].style.transform = "translateY(-6px) rotate(-135deg)";
+    ele[2].style.transform = "translateY(-9px) rotate(-135deg)";
     for (let i = 0; i < ele.length; i++) {
         ele[i].style.transition = "0.2s";
         ele[i].style.backgroundColor = "pink";
     }
-    hamburger.style.display = "block";
+    hamburger.style.display = "flex";
     hamburger.style.top = "calc(20vh - 1%)";
     navState = 1;
 }
