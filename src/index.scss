@@ -188,6 +188,34 @@ body {
     }
 
 }
+.socal-media-icons {
+    display : block;
+    text-align : center;
+}
+  .footer-message {
+    text-align : center;
+    color : white;
+}
+
+    #github {
+        width : 50px;
+        height : 50px;
+        text-align : center;
+        margin : 10px;
+       
+    }
+    #github:hover {
+        cursor: pointer;
+    }
+    #linkedin {
+        width : 50px;
+        height : 50px;
+        text-align : center;
+        margin : 10px;
+    }
+    #linkedin:hover {
+        cursor: pointer;
+    }
 
    
     .project-card {

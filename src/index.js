@@ -9,12 +9,19 @@ import Saturnbasic from "./images/saturnmap.jpg";
 import Sunbasic from "./images/sunmap.jpg";
 import Mercurybasic from "./images/mercurymap.jpg";
 import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
+import Github from "./images/github.svg";
+import LinkedIn from "./images/linkedin.svg";
 
 
 let hamburger = document.getElementsByClassName("hamburger-content")[0];
 let hamburgerContainer = document.getElementsByClassName("hamburger-container")[0];
 let ele = document.getElementsByClassName("nav-ele");
 let navState = 0;
+let linkedin = document.getElementById("linkedin");
+linkedin.src = LinkedIn;
+let github = document.getElementById("github");
+github.src = Github;
+
 
 function translateHamburger() {
     ele[0].style.transform = "translateY(9px) rotate(135deg)";
