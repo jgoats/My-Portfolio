@@ -198,6 +198,14 @@ document.getElementById("contact-button").addEventListener("click", function (e)
                 }, 4000);
                 document.getElementById("contact-form").reset();
             }
+            else if (!response.data.emailValid) {
+                status.classList.add("error");
+                status.innerHTML = "email was not a valid email"
+                setTimeout(() => {
+                    status.classList.remove("error");
+                    status.innerHTML = "";
+                }, 4000);
+            }
         }).catch((err) => {
             if (err) {
                 status.classList.add("error");
