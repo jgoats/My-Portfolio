@@ -1,5 +1,7 @@
 import axios from "axios";
 import "./index.scss";
+import Github from "./images/github.svg";
+import LinkedIn from "./images/linkedin.svg";
 import Music from "./sounds/spaceMusic.mp3";
 import Image from "./images/play-button.png";
 import Image2 from "./images/play-button.svg";
@@ -9,8 +11,7 @@ import Saturnbasic from "./images/saturnmap.jpg";
 import Sunbasic from "./images/sunmap.jpg";
 import Mercurybasic from "./images/mercurymap.jpg";
 import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
-import Github from "./images/github.svg";
-import LinkedIn from "./images/linkedin.svg";
+
 
 
 let hamburger = document.getElementsByClassName("hamburger-content")[0];
