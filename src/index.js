@@ -14,6 +14,7 @@ import LinkedIn from "./images/linkedin.svg";
 
 
 
+
 let hamburger = document.getElementsByClassName("hamburger-content")[0];
 let hamburgerContainer = document.getElementsByClassName("hamburger-container")[0];
 let ele = document.getElementsByClassName("nav-ele");
@@ -130,6 +131,45 @@ submit.addEventListener("click", () => {
 
 }, false);
 
+
+let counter = 1;
+
+function animateSpinner() {
+    if (counter <= 9) {
+        for (let i = 1; i <= 9; i++) {
+            if (counter === i) {
+                let e = document.getElementsByClassName(`c${counter}`)[0];
+                e.style.opacity = "1.0";
+            }
+            else if ((counter - 1) === i) {
+                let e2 = document.getElementsByClassName(`c${counter - 1}`)[0];
+                e2.style.opacity = "0.5";
+            }
+            else if ((counter - 2) === i) {
+                let e3 = document.getElementsByClassName(`c${counter - 2}`)[0];
+                e3.style.opacity = "0.3";
+            }
+            else if ((counter - 3) === i) {
+                let e4 = document.getElementsByClassName(`c${counter - 3}`)[0];
+                e4.style.opacity = "0.1";
+            }
+
+            else {
+                let e = document.getElementsByClassName(`c${i}`)[0];
+                e.style.opacity = "0";
+
+            }
+        }
+        counter === 9 ? counter = 1 : counter++;
+    }
+
+}
+function clearSpinner() {
+    for (let i = 1; i <= 9; i++) {
+        document.getElementsByClassName(`c${i}`)[0].style.opacity = "0";
+    }
+}
+
 document.getElementById("contact-button").addEventListener("click", function (e) {
     e.preventDefault();
     let firstName = document.getElementById("firstname").value;
@@ -187,6 +227,7 @@ document.getElementById("contact-button").addEventListener("click", function (e)
         }, 4000);
     }
     else {
+        let interval = window.setInterval(animateSpinner, 75);
         axios({
             method: "post",
             url: 'https://contact-form-backend-234.herokuapp.com/send',
@@ -195,6 +236,8 @@ document.getElementById("contact-button").addEventListener("click", function (e)
                 "content-type": "application/json"
             }
         }).then((response) => {
+            window.clearInterval(interval);
+            clearSpinner.call(window);
             if (response.data.emailSent) {
                 status.classList.add("success");
                 status.innerHTML = "email was successfully sent"
