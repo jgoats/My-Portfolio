@@ -72,7 +72,7 @@ let app = (function () {
                 else {
                     counter += 30;
                 }
-            }, 16);
+            }, 15);
         }
         if (Math.sign(distance) == -1) {
             let interval = setInterval(function () {
@@ -84,7 +84,7 @@ let app = (function () {
                     counter += -30;
                 }
 
-            }, 16);
+            }, 15);
         }
     }
 
