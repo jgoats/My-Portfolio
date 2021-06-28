@@ -288,7 +288,7 @@ let app = (function () {
 
     earthMesh.position.z = -100;
     earthMesh.position.x = 200;
-    earthMesh.position.y = 400;
+    earthMesh.position.y = 350;
     scene.add(earthMesh)
 
 
@@ -314,7 +314,7 @@ let app = (function () {
 
     saturnMesh.position.z = 0;
     saturnMesh.position.x = 0;
-    saturnMesh.position.y = 500;
+    saturnMesh.position.y = 700;
     scene.add(saturnMesh)
 
     const sunTexture = new THREE.TextureLoader().load(Sunbasic);
@@ -338,7 +338,7 @@ let app = (function () {
 
     mercuryMesh.position.z = -200;
     mercuryMesh.position.x = 1100;
-    mercuryMesh.position.y = 500;
+    mercuryMesh.position.y = 300;
     scene.add(mercuryMesh)
 
     function randomX() {
