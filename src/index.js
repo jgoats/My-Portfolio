@@ -237,6 +237,7 @@ let app = (function () {
                 }
             }).then((response) => {
                 window.clearInterval(interval);
+                console.log(response);
                 clearSpinner.call(window);
                 if (response.data.emailSent) {
                     status.classList.add("success");
