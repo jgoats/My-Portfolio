@@ -110,9 +110,10 @@ body {
     .project-container {
     margin-top : 60px;
     display : flex;
-    flex-direction : row;
-    flex-wrap : wrap;
-    justify-content : center;
+   align-items : center;
+   justify-content : center;
+   flex-direction : row;
+   flex-wrap:wrap;
     }
     .contact-heading {
         color : white;
@@ -273,6 +274,7 @@ body {
 
    
     .project-card {
+        margin : 20px;
         box-shadow: 0px 0px 5px 2px white;
         height : 252px;
         a {

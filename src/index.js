@@ -11,6 +11,7 @@ import Mercurybasic from "./images/mercurymap.jpg";
 import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
 import Github from "./images/github.svg";
 import LinkedIn from "./images/linkedin.svg";
+import Budget from "./video/Budget.mp4";
 
 
 
@@ -114,6 +115,7 @@ let app = (function () {
     var audio = new Audio(Music);
     document.getElementById("img").src = Image;
     document.getElementById("asteroidkiller").src = AsteroidKillerMP4;
+    document.getElementById("budgetapp").src = Budget;
 
     document.getElementById("img").addEventListener("click", function () {
         if (audio.paused) {
