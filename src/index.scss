@@ -278,6 +278,7 @@ body {
         height : auto;
         margin : 20px;
         box-shadow: 0px 0px 5px 2px white;
+        background-color : black;
         a {
             text-decoration : none;
         }
@@ -303,6 +304,30 @@ body {
         text-align : center;
         font-weight : bold;
         font-size : 22px;
+    }
+    .project-code {
+        color : black;
+        border : none;
+        padding : 5px 8px 5px 8px;
+        border-radius : 10px;
+        font-weight : bold;
+        background-color :rgb(212, 139, 30);
+        width : 85px;
+        margin-left : auto;
+        margin-right : auto;
+        display : block;
+        margin-bottom : 10px;
+        opacity : 1;
+    }
+    .project-code a {
+        color : black;
+        font-weight : bold;
+        font-family: 'Oxygen', sans-serif;
+    }
+    .project-code:hover {
+        cursor: pointer;
+        transform : scale(1.1);
+        transition : 0.3s;
     }
     .card-heading {
         text-decoration : underline;
