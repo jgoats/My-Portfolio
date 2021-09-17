@@ -76,11 +76,75 @@
         <div class="project-container">
             <div class="project-card">
                 <a href="https://justinssoftware.com/Budget">
-                    <p class="card-name">Budget App</p>
                     <video class="video" id="budgetapp" muted autoplay loop="loop" playsinline></video>
                     <p class="card-description">
                     </p>
                 </a>
+                <div class="project-info">
+                    <p class="card-name">Budget App</p>
+                    <p class="card-description">
+                        <span class="card-heading">Description</span>
+                        A simple custom budget app for creating personal budgets quickly and easily.
+                    </p>
+                    <p class="card-description">
+                        <span class="card-heading">Purpose</span>
+                        I have a hard time saving money due to my love of eating out and until
+                        I created a budget using this app and seeing how much I really spend on food every month
+                        conpared to all my other
+                        expenses, I was shocked.
+                    </p>
+                    <p class="card-description">
+                        <span class="card-heading">Objective</span>
+                        My main objective for this application was the ability to create a visual budget using graphs
+                        to make it much easier to view data. I also wanted to make it as easy as possible to
+                        create a budget. Other budget applications I have seen make it way more complicated than it
+                        really needs to
+                        be.
+                    </p>
+                    <p class="card-description">
+                        <span class="card-heading">Duration</span>
+                        The application ended up taking me a little over a month to complete. Half of that time was
+                        figuring out a secure way to administer authentication using JWT's. I did a lot of research and
+                        concluded
+                        that storing the JWT in session storage and local storage was not an option because it's highly
+                        suseptable to
+                        XSS (cross-site scripting attacks). I ended up storing the JWT in memory inside my React
+                        application's state.
+                        This approach was more secure but I would also mean that if the user refreshed the page, they
+                        would be logged out.
+                        I have since found a better way to handle authentication and sessions using HTTP cookies
+                        alongside JWT's
+                        which is still secure but also
+                        keeps a user signed in on a page refresh.
+                    </p>
+                    <p class="card-description">
+                        <span class="card-heading">Challenges</span>
+                        One of the hardest challenges for me was creating protected client side routing. I was used to
+                        server
+                        side protected routes by just using some custom authentication middleware with Express. However
+                        I had no idea how to
+                        accomplish this on the client side with React. After trying out several methods with little
+                        success it eventually dawned on me
+                        that I can create a React component that checks for a JWT and if one exists, I get redirected
+                        using "this.props.history.push"
+                        which is available from "react-router-dom". This ended up being a nice solution and makes it
+                        impossible to get to the dashboard
+                        page without a valid JWT.
+                    </p>
+                    <p class="card-description">
+                        <span class="card-heading">Technologies Used</span>
+                    <ul class="card-technologies">
+                        <li>React.js</li>
+                        <li>SASS</li>
+                        <li>Webpack</li>
+                        <li>MongoDB</li>
+                        <li>Express.js</li>
+                        <li>JSON Web Tokens</li>
+                        <li>Node.js</li>
+                        <li>Charts.js</li>
+                    </ul>
+                    </p>
+                </div>
             </div>
             <div class="project-card">
                 <a href="https://justinssoftware.com/AsteroidKiller/asteroidKiller.html">
