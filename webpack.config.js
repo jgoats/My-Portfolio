@@ -44,7 +44,7 @@ module.exports = {
                 use: "svg-url-loader"
             },
             {
-                test: /\.mp3|mp4$/,
+                test: /\.mp3|mp4$|pdf/,
                 use: 'file-loader',
             }
         ]

@@ -304,30 +304,36 @@ body {
         text-align : center;
         font-weight : bold;
         font-size : 22px;
+        padding : 5px;
+        display : flex;
+        align-items : center;
+        justify-content: center;
+        background-color :rgba(28, 30, 31, 0.35);
     }
-    .project-code {
+    .project-button {
         color : black;
         border : none;
         padding : 5px 8px 5px 8px;
-        border-radius : 10px;
         font-weight : bold;
-        background-color :rgb(212, 139, 30);
-        width : 85px;
-        margin-left : auto;
-        margin-right : auto;
-        display : block;
-        margin-bottom : 10px;
+        background-color : black;
         opacity : 1;
+        margin : 10px 10px;
+        box-shadow : 0px 0px 2px white;
     }
-    .project-code a {
-        color : black;
+    .project-button a {
+        color : white;
         font-weight : bold;
         font-family: 'Oxygen', sans-serif;
     }
-    .project-code:hover {
+    .project-button:hover {
         cursor: pointer;
         transform : scale(1.1);
         transition : 0.3s;
+    }
+    .project-buttons {
+        display : flex;
+        align-items : center;
+        justify-content:center;
     }
     .card-heading {
         text-decoration : underline;

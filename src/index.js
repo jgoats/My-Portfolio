@@ -12,6 +12,7 @@ import AsteroidKillerMP4 from "./video/asteroidKiller_3.mp4";
 import Github from "./images/github.svg";
 import LinkedIn from "./images/linkedin.svg";
 import Budget from "./video/Budget.mp4";
+import BudgetCaseStudy from "./images/BudgetAppCaseStudy.pdf";
 
 
 
@@ -22,6 +23,7 @@ let app = (function () {
     let navState = 0;
     document.getElementById("linkedin").src = LinkedIn;
     document.getElementById("github").src = Github;
+    document.getElementById("caseStudyOne").href = BudgetCaseStudy;
 
 
     function translateHamburger() {
